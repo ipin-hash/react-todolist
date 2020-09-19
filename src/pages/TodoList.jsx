@@ -8,18 +8,20 @@ import Todos from "../components/Todos";
 const TodoList = () => {
 
   const [ todos, setTodos ] = useState([
-    {
-      text: "Sinau cok"
-    },
-    {
-      text: "React"
-    }
+    { text: "Sinau cok"},
+    { text: "React" }
   ])
+
+const addTodo = value => {  
+  const addedTodo= [...todos, { text: value }]
+
+    setTodos(addedTodo);
+}
 
   return (
     <Paper>
       <Header />
-      <TodoForm />
+      <TodoForm addTodo={addTodo}/>
       <Todos  todos={todos} />
     </Paper>
   );
