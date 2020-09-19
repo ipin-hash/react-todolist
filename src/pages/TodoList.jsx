@@ -6,25 +6,28 @@ import TodoForm from "../components/TodoForm";
 import Todos from "../components/Todos";
 
 const TodoList = () => {
-
-  const [ todos, setTodos ] = useState([
-    { text: "Sinau cok"},
+  const [todos, setTodos] = useState([
+    { text: "Sinau cok" },
     { text: "React" }
-  ])
+  ]);
 
-const addTodo = value => {  
-  const addedTodo= [...todos, { text: value }]
+  const [showAdd, setShowAdd] = useState(false);
+
+  const showAddToggle = () => setShowAdd(!showAdd);
+
+  const addTodo = (value) => {
+    const addedTodo = [...todos, { text: value }];
 
     setTodos(addedTodo);
-}
+  };
 
   return (
     <Paper>
-      <Header />
-      <TodoForm addTodo={addTodo}/>
-      <Todos  todos={todos} />
+      <Header showAddToggle={showAddToggle}/>
+      <TodoForm addTodo={addTodo} showAdd={showAdd}/>
+      <Todos todos={todos} />
     </Paper>
   );
-}
+};
 
 export default TodoList;
