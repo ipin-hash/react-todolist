@@ -1,16 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Todo = (prop) => {
+const Todo = ({ text, complateTodo, index, isComplated }) => {
   return (
-    <div className="todo">
-      <span className="todo-text">{prop.text}</span>
+    <div className="todo" onClick={() => complateTodo(index)}>
+      <span
+        className="todo-text"
+        style={{ textDecoration: isComplated ? "line-through" : "initial" }}
+      >
+        {text}
+      </span>
     </div>
   );
 };
 
 Todo.PropTypes = {
-  text: PropTypes.string.isRequired
-}
+  text: PropTypes.string.isRequired,
+  complateTodo: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  isComplated: PropTypes.bool.isRequered
+};
 
 export default Todo;

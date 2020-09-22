@@ -3,11 +3,19 @@ import PropTypes from "prop-types";
 
 import Todo from "./Todo";
 
-const Todos = ({ todos }) => {
+const Todos = ({ todos, complateTodo }) => {
   return (
     <section className="todos">
-      {todos.map((todo) => {
-        return <Todo text={todo.text} />;
+      {todos.map((todo, index) => {
+        return (
+          <Todo
+            key={index}
+            text={todo.text}
+            isComplated={todo.isComplated}
+            complateTodo={complateTodo}
+            index={index}
+          />
+        );
       })}
     </section>
   );
@@ -18,7 +26,8 @@ Todos.protoTypes = {
     PropTypes.shape({
       text: PropTypes.string
     })
-  )
+  ),
+  complateTodo: PropTypes.func.isRequired
 };
 
 export default Todos;
