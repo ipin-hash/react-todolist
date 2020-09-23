@@ -8,12 +8,12 @@ const TodoForm = ({ addTodo, showAdd }) => {
     e.preventDefault();
 
     if (!value) {
-      alert("No blank todo!");
+      alert("Anda belum memasukkan teks");
       return;
     }
 
     if (value.length > 25) {
-      alert(`Please create a shorter todo text!`);
+      alert(`Coba masukkan teks yang lebih pendek`);
       setValue("");
       return;
     }

@@ -15,10 +15,17 @@ const TodoList = () => {
 
   const showAddToggle = () => setShowAdd(!showAdd);
 
-  const addTodo = (value) => {
-    const addedTodo = [...todos, { text: value, isComplated: false }];
+  const clearTodos = () => setTodos([])
 
-    setTodos(addedTodo);
+  const addTodo = (value) => {
+    if (todos.length < 9) {
+      const addedTodo = [...todos, { text: value, isComplated: false }];
+
+      setTodos(addedTodo);
+    } else {
+      alert(`hanya 10 baris saja!`);
+      return;
+    }
   };
 
   const complateTodo = (index) => {
@@ -28,11 +35,9 @@ const TodoList = () => {
     setTodos(addedTodo);
   };
 
-  // console.log("todos", todos);
-
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} clearTodos={clearTodos} />
       <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} complateTodo={complateTodo} />
     </Paper>

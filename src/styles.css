@@ -139,5 +139,17 @@ body {
   height: 50px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%)
+  transform: translate(-50%);
+}
+
+.todo-placeholder-text {
+  font-family: "Homemade apple", sans-serif;
+  font-size: 22px;
+  text-align: center;
+  padding: 14px;
+}
+
+.add-button-placeholder-text {
+  font-family: "bungee", sans-serif;
+  font-size: 20px;
 }
