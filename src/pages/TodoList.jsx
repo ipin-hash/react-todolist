@@ -15,7 +15,7 @@ const TodoList = () => {
 
   const showAddToggle = () => setShowAdd(!showAdd);
 
-  const clearTodos = () => setTodos([])
+  const clearTodos = () => !showAdd && setTodos([]);
 
   const addTodo = (value) => {
     if (todos.length < 9) {
@@ -37,7 +37,11 @@ const TodoList = () => {
 
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd} clearTodos={clearTodos} />
+      <Header
+        showAddToggle={showAddToggle}
+        showAdd={showAdd}
+        clearTodos={clearTodos}
+      />
       <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} complateTodo={complateTodo} />
     </Paper>

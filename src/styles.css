@@ -15,6 +15,14 @@
   color: var(--main-black-color);
 }
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right
+}
+
 html {
   font-size: 10px;
 }
@@ -59,7 +67,7 @@ body {
 }
 
 .header-title {
-  flex: 1;
+  width: 52%;
   font-size: 3.6rem;
   color: var(--main-black-color);
   font-family: "Homemade apple";
@@ -68,6 +76,7 @@ body {
 }
 
 .header-btn {
+  width: 24%;
   font-size: 1.8rem;
   font-family: "bungee", sans-serif;
   padding: 16px;
