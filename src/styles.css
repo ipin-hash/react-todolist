@@ -97,7 +97,7 @@ body {
   min-height: 500px;
 }
 
-.todo {
+/* .todo {
   position: relative;
   flex: 1 0 auto;
   text-align: center;
@@ -114,7 +114,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-}
+} */
 
 .todo-placeholder-text {
   font-family: "Homemade apple", sans-serif;

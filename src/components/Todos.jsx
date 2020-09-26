@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Todo from "./Todo";
+import Todo from "./todo/Todo";
 
 const Todos = ({ todos, complateTodo }) => {
   return (
@@ -21,7 +21,9 @@ const Todos = ({ todos, complateTodo }) => {
 
       {todos.length === 0 && (
         <div className="todo-placeholder-text">
-          Tambahkan teks dengan klik tombol <span className="add-button-placeholder-text">ADD</span> di pojok kiri atas
+          Tambahkan teks dengan klik tombol{" "}
+          <span className="add-button-placeholder-text">ADD</span> di pojok kiri
+          atas
         </div>
       )}
     </section>
