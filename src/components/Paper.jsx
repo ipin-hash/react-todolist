@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Paper = ({ children }) => {
-  return(
+  return (
     <div className="container">
-      <div className="frame">
-        { children }
-      </div>
+      <div className="frame">{children}</div>
     </div>
-  )
-}
+  );
+};
 
 Paper.prototype = {
   children: PropTypes.oneOfType([
