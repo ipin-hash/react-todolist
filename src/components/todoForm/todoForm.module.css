@@ -1,0 +1,30 @@
+.add {
+  padding: 16px;
+}
+
+.addForm {
+  display: flex;
+  align-items: flex-start;
+}
+
+.addInput {
+  background: unset;
+  border: unset;
+  padding: 0 64px;
+  flex: 1;
+  border-bottom: 1px solid var(--main-red-color);
+  outline: unset;
+  font-size: 16px;
+  font-family: "Homemade apple", sans-serif;
+  text-transform: lowercase;
+}
+
+.addBtn {
+  font-size: 1.8rem;
+  font-family: "bungee", sans-serif;
+  padding: 16px;
+  cursor: pointer;
+  background: unset;
+  outline: unset;
+  border: unset;
+}

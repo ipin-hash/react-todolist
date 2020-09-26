@@ -59,16 +59,16 @@ body {
   text-align: center;
 } */
 
-.add {
+/* .add {
   padding: 16px;
 }
 
 .add-form {
   display: flex;
   align-items: flex-start;
-}
+} */
 
-.add-input {
+/* .add-input {
   background: unset;
   border: unset;
   padding: 0 64px;
@@ -88,7 +88,7 @@ body {
   background: unset;
   outline: unset;
   border: unset;
-}
+} */
 
 .todos {
   display: flex;
