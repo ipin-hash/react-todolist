@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./paper.module.css"
+import styles from "./paper.module.css";
 
 const Paper = ({ children }) => {
   return (
