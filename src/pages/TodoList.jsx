@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 
-import Paper from "../components/paper/Paper";
-import Header from "../components/header/Header";
-import TodoForm from "../components/todoForm/TodoForm";
-import Todos from "../components/todos/Todos";
+import useStateWithLocalStorage from "../hooks/useStateWithLocalStorage";
+import Paper from "../components/paper/PaperClass";
+import Header from "../components/header/HeaderClass";
+import TodoForm from "../components/todoForm/TodoFormClass";
+import Todos from "../components/todos/TodosClass";
+
+import Container from "../layout/Container";
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([
-    { text: "Sinau", isComplated: false },
-    { text: "React", isComplated: false }
-  ]);
+  // const [todos, setTodos] = useState([
+  //   { text: "Sinau", isComplated: false },
+  //   { text: "React", isComplated: false }
+  // ]);
+
+  // const [todos, setTodos] = useState(
+  //   JSON.parse(localStorage.getItem("todos")) || []
+  // );
+
+  const [todos, setTodos] = useStateWithLocalStorage("todos");
 
   const [showAdd, setShowAdd] = useState(false);
 
-  const showAddToggle = () => setShowAdd(!showAdd);
-
-  const clearTodos = () => !showAdd && setTodos([]);
+  // useEffect(() => {
+  //   localStorage.setItem("todos", JSON.stringify(todos));
+  // }, [todos]);
 
   const addTodo = (value) => {
     if (todos.length < 9) {
@@ -35,15 +44,25 @@ const TodoList = () => {
     setTodos(addedTodo);
   };
 
+  const clearTodos = () => !showAdd && setTodos([]);
+
+  const showAddToggle = () => setShowAdd(!showAdd);
+
   return (
     <Paper>
-      <Header
-        showAddToggle={showAddToggle}
-        showAdd={showAdd}
-        clearTodos={clearTodos}
-      />
-      <TodoForm addTodo={addTodo} showAdd={showAdd} />
-      <Todos todos={todos} complateTodo={complateTodo} />
+      <Container
+        flexDirection="column"
+        justifyContent="space-beetwen"
+        height="100%"
+      >
+        <Header
+          showAddToggle={showAddToggle}
+          showAdd={showAdd}
+          clearTodos={clearTodos}
+        />
+        <TodoForm addTodo={addTodo} showAdd={showAdd} />
+        <Todos todos={todos} complateTodo={complateTodo} />
+      </Container>
     </Paper>
   );
 };

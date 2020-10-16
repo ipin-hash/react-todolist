@@ -1,16 +1,18 @@
-import React from "react";
+// import React from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
+import { useTheme } from "emotion-theming";
 import PropTypes from "prop-types";
-import styles from "./todo.module.css";
+
+import * as styles from "./todo.style";
+// import styles from "./todo.module.css";
 
 const Todo = ({ text, complateTodo, index, isComplated }) => {
+  const theme = useTheme();
+
   return (
-    <div className={styles.todo} onClick={() => complateTodo(index)}>
-      <span
-        className={styles.todoText}
-        style={{ textDecoration: isComplated ? "line-through" : "initial" }}
-      >
-        {text}
-      </span>
+    <div css={styles.todo({ theme })} onClick={() => complateTodo(index)}>
+      <span css={styles.todoText({ theme, isComplated })}>{text}</span>
     </div>
   );
 };

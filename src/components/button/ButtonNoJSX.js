@@ -1,4 +1,3 @@
-// import React from "react";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
@@ -9,10 +8,13 @@ import * as styles from "./button.style";
 const Button = ({ text, onClick, color, align }) => {
   const theme = useTheme();
 
-  return (
-    <button css={styles.button({ align, color, theme })} onClick={onClick}>
-      {text}
-    </button>
+  return jsx(
+    "button",
+    {
+      css: styles.button({ align, color, theme }),
+      onClick: onClick
+    },
+    text
   );
 };
 

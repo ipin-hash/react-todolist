@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./todoForm.module.css";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
+import { useTheme } from "emotion-theming";
+
+import Container from "../../layout/Container";
+import Item from "../../layout/Item";
+import Button from "../button/Button";
+import * as styles from "./todoForm.style";
+// import styles from "./todoForm.module.css";
 
 const TodoForm = ({ addTodo, showAdd }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = React.useState("");
+  const theme = useTheme();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -26,15 +35,21 @@ const TodoForm = ({ addTodo, showAdd }) => {
 
   if (showAdd) {
     return (
-      <section className={styles.add}>
-        <form className={styles.addForm} onSubmit={handleFormSubmit}>
-          <input
-            type="text"
-            className={styles.addInput}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <button className={styles.addBtn}>Add</button>
+      <section className="todoform-component">
+        <form onSubmit={handleFormSubmit}>
+          <Container alignItems="flex-start">
+            <Item flex={1} padding="0 0 0 16px">
+              <input
+                type="text"
+                css={styles.addInput({ theme })}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+            </Item>
+            <Item>
+              <Button text="Add" color="black" align="left" />
+            </Item>
+          </Container>
         </form>
       </section>
     );
