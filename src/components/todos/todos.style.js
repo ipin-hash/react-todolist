@@ -15,3 +15,9 @@ export const addButtonPlaceholderText = ({ theme }) =>
     font-size: 20px;
     color: ${theme.color.primary.black};
   `;
+
+export const AboutText = () =>
+  css`
+    font-family: "bungee", sans-serif;
+    font-size: 18px;
+  `;
